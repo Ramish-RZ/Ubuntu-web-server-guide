@@ -1,0 +1,114 @@
+/* Reset some default styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Structure the layout */
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Sidebar styling */
+.sidebar {
+    width: 30%; /* Takes 40% of the width */
+    background-color: #000000; /* Light gray background for contrast */
+    padding: 20px;
+    border-right: 2px solid #000; /* Vertical line with black color */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.GUS {
+    font-size: 30px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #fdfdfd; 
+    text-align: center;
+}
+.GUS:hover{
+    color: #000;
+    border-left: 4px solid #1e3edb; /* Blue accent on hover */
+    background-color: #41b8d8; /* Slight background change on hover */
+}
+.GUS-index{
+    font-size: 30px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #fdfdfd; 
+    text-align: center;
+    color: #000;
+    border-left: 4px solid #1e3edb; /* Blue accent on hover */
+    background-color: #41b8d8; /* Slight background change on hover */
+}
+
+.sidebar nav a {
+    display: flex;
+    align-items: center;
+    margin: 50px 0;
+    padding: 10px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 25px;
+    border-left: 4px solid transparent; /* Space for an accent effect */
+    transition: all 0.3s;
+    border: groove;
+}
+
+.sidebar nav a:hover {
+    color: #000;
+    border-left: 4px solid #1e3edb; /* Blue accent on hover */
+    background-color: #41b8d8; /* Slight background change on hover */
+}
+
+
+/* Main content (empty for now) */
+.content {
+    width: 95%; /* Takes the remaining 60% */
+    background-color: #fff; /* White background */
+}
+
+.content img{
+    width: 100%;
+    height: 100%;
+    
+    
+}
+
+/* Center content styling for specific pages */
+.center-title {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 2rem;
+    color: #333;
+}
+
+.NS{
+    color: #000;
+    border-left: 4px solid #1e3edb; /* Blue accent on hover */
+    background-color: #41b8d8; /* Slight background change on hover */
+}
+.US{
+    color: #000;
+    border-left: 4px solid #1e3edb; /* Blue accent on hover */
+    background-color: #41b8d8; /* Slight background change on hover */  
+}
+.VS{
+    color: #000;
+    border-left: 4px solid #1e3edb; /* Blue accent on hover */
+    background-color: #41b8d8; /* Slight background change on hover */
+}
+.BS{
+    color: #000;
+    border-left: 4px solid #1e3edb; /* Blue accent on hover */
+    background-color: #41b8d8; /* Slight background change on hover */
+}
+.SA{
+    color: #000;
+    border-left: 4px solid #1e3edb; /* Blue accent on hover */
+    background-color: #41b8d8; /* Slight background change on hover */
+}
