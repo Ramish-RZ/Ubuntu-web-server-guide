@@ -35,8 +35,51 @@
 
     <main class="content">
         <h1 class="center-title">Server Access</h1>
-        <!-- Add your content for this page here -->
-        <p>This page provides details on how to access the server and manage it effectively.</p>
+    <section class="server-access">
+        <h3>Del 4: Tilgang til serveren</h3>
+        <p>For å administrere serveren din og få tilgang eksternt, må du sette opp sikker tilkobling og tilpasse tilganger.</p>
+
+        <h3>SSH-tilgang</h3>
+        <p>1. Installer OpenSSH-server:  
+           <code>sudo apt install openssh-server</code>  
+           <br>2. Start SSH-tjenesten:  
+           <code>sudo systemctl start ssh</code>  
+           <br>3. Sjekk statusen til SSH:  
+           <code>sudo systemctl status ssh</code></p>
+        
+        <p>4. Konfigurer SSH for sikker tilgang:  
+           <code>sudo nano /etc/ssh/sshd_config</code>  
+           <br>- Endre portnummer for sikkerhet:  
+           <code>#Port 22</code> til <code>Port 2222</code>  
+           <br>- Deaktiver root-pålogging:  
+           <code>PermitRootLogin no</code>  
+           <br>- Lagre og avslutt med <code>Ctrl+O</code> og <code>Ctrl+X</code>.</p>
+
+        <h3>Brukeradministrasjon</h3>
+        <p>1. Opprett en ny bruker:  
+           <code>sudo adduser brukernavn</code>  
+           <br>2. Gi brukeren sudo-tilgang:  
+           <code>sudo usermod -aG sudo brukernavn</code></p>
+        
+        <h3>Test ekstern tilgang</h3>
+        <p>1. Finn serverens IP-adresse:  
+           <code>ip a</code>  
+           <br>2. Logg inn eksternt via SSH:  
+           <code>ssh -p 2222 brukernavn@server-ip</code></p>
+        
+        <h3>Bruker SSH-nøkler for sikkerhet</h3>
+        <p>1. Generer en SSH-nøkkel på din lokale maskin:  
+           <code>ssh-keygen -t rsa</code>  
+           <br>2. Kopier offentlig nøkkel til serveren:  
+           <code>ssh-copy-id -p 2222 brukernavn@server-ip</code>  
+           <br>3. Deaktiver passordpålogging i <code>/etc/ssh/sshd_config</code>:  
+           <code>PasswordAuthentication no</code></p>
+        
+        <h3>Webgrensesnitt for serverstyring (valgfritt)</h3>
+        <p>Installer verktøy som Webmin for enklere administrasjon via en nettleser:  
+           <code>sudo apt install webmin</code></p>
+    </section>
+    <footer>@guide Ubuntu Web server</footer>
     </main>
 </body>
 </html>

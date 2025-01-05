@@ -33,7 +33,43 @@
 
     <main class="content">
         <h1 class="center-title">vSphere Setup</h1>
-        <!-- Add your content for this page here -->
+        <section class="vsphere">
+        <h3>Del 1: Opprett en Virtuell Maskin i vCenter</h3>
+         <p> Dette er første steg i en guide for å sette opp en Linux-basert webserver. Her oppretter vi den virtuelle maskinen (VM) i vCenter. I de neste delene vil vi installere Ubuntu, sette opp en webserver og publisere en nettside.
+            <br> <br>
+            <h3>Forberedelser</h3> <p>
+            • Sørg for at du er koblet til Global Protect VPN. <br>
+            • Naviger til vCenter via nettleseren på: http://10.10.1.20/.</p>
+
+           <h3>Opprettelse av Virtuell Maskin</h3> 
+            <p>1. Start prosessen
+            Logg inn på vCenter og klikk på "New Virtual Machine" for å starte veiviseren. Her følger du flere steg for å konfigurere den virtuelle maskinen.</p>
+
+            <p>2. Generelle innstillinger
+            
+                • Velg "Create new virtual machine". <br>
+                • Gi maskinen et navn, for eksempel: Ubuntu-Webserver. <br>
+                • Klikk "Next".</p> 
+           <p>3. Velg ressursklynge
+            
+           • Velg riktig ressursklynge (f.eks. ikt-fag) og klikk "Next".</p> 
+           <p>4. Konfigurer OS <br>
+            
+            • Under Guest OS Family: velg Linux. <br>
+            • Under Guest OS Version: velg Ubuntu Linux 64-bit. <br>
+            </p>
+            <p>5. Maskinvareoppsett
+            
+                • CPU: 4 kjerner
+                • Memory: 4 GB
+                • Disk: 25 GB (sett Disk Provisioning til Thin Provisioning).
+                • CD/DVD Drive: Velg Client Device og legg til Ubuntu ISO-filen fra Content Library (f.eks. ubuntu-22.04.1-live-server-amd64).
+                • Huk av for "Connect at power on". </p>
+            <p>6. Fullfør opprettelsen <br>
+            Gå gjennom oppsettet og klikk på "Finish" for å opprette VM-en.</p>
+        </section>
+        <footer>@guide Ubuntu Web server</footer>
     </main>
+
 </body>
 </html>

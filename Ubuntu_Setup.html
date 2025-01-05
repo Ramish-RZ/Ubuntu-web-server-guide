@@ -34,8 +34,60 @@
    
     <main class="content">
         <h1 class="center-title">Ubuntu Setup</h1>
-        <!-- Add your content for this page here -->
-        <p>This page provides a guide for setting up Ubuntu on your server.</p>
+    <section class="ubuntu">
+        <h3>Del 2: Installering av Ubuntu på Virtuell Maskin</h3>
+        <p>Dette er andre del i guiden for å sette opp en Linux-basert webserver. Nå som vi har opprettet en virtuell maskin, går vi videre til å installere Ubuntu.</p>
+
+        <h3>Forberedelser</h3>
+        <p>
+            • Sørg for at den virtuelle maskinen er slått på og koblet til Ubuntu ISO-filen fra Content Library. <br>
+            • Start VM-en i konsollen for å starte installasjonsveiviseren.
+        </p>
+
+        <h3>Installasjonsprosess</h3>
+        <p>1. Velg språk</p>
+        <p>
+            • Når installasjonsprogrammet starter, velg ønsket språk (for eksempel English). <br>
+            • Klikk "Enter" for å bekrefte valget.
+        </p>
+
+        <p>2. Velg installasjonsalternativ</p>
+        <p>
+            • Velg "Install Ubuntu Server" fra menyen. <br>
+            • Klikk "Enter" for å fortsette.
+        </p>
+
+        <p>3. Nettverkskonfigurasjon</p>
+        <p>
+            • Konfigurer nettverket (bruk automatisk DHCP hvis tilgjengelig). <br>
+            • Bekreft innstillingene og fortsett.
+        </p>
+
+        <p>4. Diskoppsett</p>
+        <p>
+            • Velg "Use an entire disk" og sørg for at riktig disk (25 GB) er valgt. <br>
+            • Bekreft at endringer kan gjøres på disken.
+        </p>
+
+        <p>5. Brukeroppsett</p>
+        <p>
+            • Opprett en ny bruker med et brukernavn (for eksempel ubuntu-admin). <br>
+            • Velg et sterkt passord og bekreft.
+        </p>
+
+        <p>6. Oppdaterings- og pakkekonfigurasjon</p>
+        <p>
+            • Velg "Install security updates automatically". <br>
+            • La systemet installere grunnleggende pakker som SSH-server.
+        </p>
+
+        <p>7. Fullfør installasjonen</p>
+        <p>
+            • La systemet fullføre installasjonen. Når det er ferdig, start VM-en på nytt. <br>
+            • Fjern ISO-filen for å unngå å starte installasjonen på nytt ved neste oppstart.
+        </p>
+    </section>
+    <footer>@guide Ubuntu Web server</footer>
     </main>
 </body>
 </html>

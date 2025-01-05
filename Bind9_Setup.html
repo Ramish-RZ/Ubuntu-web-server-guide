@@ -34,8 +34,52 @@
     
     <main class="content">
         <h1 class="center-title">Bind9 Setup</h1>
-        <!-- Add your content for this page here -->
-        <p>Learn how to configure Bind9 for DNS services on your server in this guide.</p>
+    <section class="bind9">
+        <h3>Del 3: Konfigurer Bind9 DNS-server</h3>
+        <p>I denne delen av guiden skal vi sette opp Bind9 som DNS-server for vårt system. Dette sikrer at nettverksressurser kan nås ved bruk av domenenavn i stedet for IP-adresser.</p>
+        
+        <h3>Installering av Bind9</h3>
+        <p>1. Oppdater systemet:  
+           <code>sudo apt update && sudo apt upgrade</code>  
+           <br>2. Installer Bind9 med kommandoen:  
+           <code>sudo apt install bind9 bind9utils bind9-doc</code></p>
+        
+        <h3>Grunnleggende konfigurasjon</h3>
+        <p>1. Åpne hovedkonfigurasjonsfilen:  
+           <code>sudo nano /etc/bind/named.conf.options</code>  
+           <br>2. Legg til følgende under "options":  
+           <pre>
+        forwarders {
+        8.8.8.8;
+        8.8.4.4;
+        };
+           </pre>  
+           <p>3. Lagre og avslutt med <code>Ctrl+O</code> og <code>Ctrl+X</code>.</p>
+        
+        <h3>Opprett en sonefil</h3>
+        <p>1. Rediger <code>named.conf.local</code>:  
+           <code>sudo nano /etc/bind/named.conf.local</code>  
+           <br>2. Legg til:  
+           <pre>
+        zone "example.com" {
+        type master;
+        file "/etc/bind/db.example.com";
+        };
+           </pre></p>
+        
+        <p>3. Opprett sonefilen:  
+           <code>sudo cp /etc/bind/db.local /etc/bind/db.example.com</code>  
+           <br>4. Rediger <code>db.example.com</code>:  
+           <code>sudo nano /etc/bind/db.example.com</code>  
+           <br>Oppdater feltene med ditt domene og IP-adresse.</p>
+        
+        <h3>Start og test Bind9</h3>
+        <p>1. Start Bind9:  
+           <code>sudo systemctl restart bind9</code>  
+           <br>2. Test med kommandoen:  
+           <code>dig example.com</code></p>
+    </section>
+    <footer>@guide Ubuntu Web server</footer>
     </main>
 </body>
 </html>

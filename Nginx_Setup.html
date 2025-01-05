@@ -34,8 +34,63 @@
 
     <main class="content">
         <h1 class="center-title">NGINX Setup</h1>
-        <!-- Add your content for this page here -->
-        <p>This page explains how to install and configure NGINX as your web server.</p>
+        <section class="nginx">
+            <h3>Del 3: Installer og Konfigurer NGINX</h3>
+            <p>Her setter vi opp NGINX som webserver etter å ha installert Ubuntu på den virtuelle maskinen.</p>
+            
+            <h3>Installere NGINX</h3>
+            <p>1. Oppdater systemet:
+                <br>
+                Kjør følgende kommandoer i terminalen:
+                <code>sudo apt update</code> og <code>sudo apt upgrade</code>.
+            </p>
+            <p>2. Installer NGINX:
+                <br>
+                Kjør kommandoen <code>sudo apt install nginx</code>.
+            </p>
+            <p>3. Bekreft installasjonen:
+                <br>
+                Sjekk at NGINX kjører ved å bruke <code>sudo systemctl status nginx</code>. Tjenesten skal vise "active (running)".
+            </p>
+            
+            <h3>Konfigurere NGINX</h3>
+            <p>1. Naviger til NGINX-konfigurasjonsfilene:
+                <br>
+                Standard konfigurasjonsfil ligger i <code>/etc/nginx/nginx.conf</code>.
+            </p>
+            <p>2. Legg til en ny server-blokk:
+                <br>
+                Opprett en ny konfigurasjonsfil for din nettside i <code>/etc/nginx/sites-available</code>, for eksempel <code>mywebsite</code>.
+            </p>
+            <p>3. Eksempel på server-blokk:
+                <br>
+                <code>
+                    server {<br>
+                    &nbsp;&nbsp;listen 80;<br>
+                    &nbsp;&nbsp;server_name mywebsite.local;<br>
+                    &nbsp;&nbsp;root /var/www/html;<br>
+                    &nbsp;&nbsp;index index.html;<br>
+                    &nbsp;&nbsp;location / {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;try_files $uri $uri/ =404;<br>
+                    &nbsp;&nbsp;}<br>
+                    }
+                </code>
+            </p>
+            <p>4. Aktiver konfigurasjonen:
+                <br>
+                Opprett en symbolsk lenke til <code>/etc/nginx/sites-enabled</code>:
+                <code>sudo ln -s /etc/nginx/sites-available/mywebsite /etc/nginx/sites-enabled/</code>.
+            </p>
+            <p>5. Test NGINX-konfigurasjonen:
+                <br>
+                Kjør kommandoen <code>sudo nginx -t</code> for å bekrefte at konfigurasjonen er korrekt.
+            </p>
+            <p>6. Start NGINX på nytt:
+                <br>
+                Bruk kommandoen <code>sudo systemctl restart nginx</code> for å laste inn den nye konfigurasjonen.
+            </p>
+        </section>
+        <footer>@guide Ubuntu Web server</footer>
     </main>
 </body>
 </html>
